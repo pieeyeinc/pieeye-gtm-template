@@ -1,0 +1,6 @@
+homepage: "https://pii.ai/"
+documentation: "https://pieeye.notion.site/Implementing-Google-Consent-Mode-with-PieEye-70e481c9b8704207a2da08d9b2043ec6"
+versions:
+  # latest version
+  - sha: f47bd0d49f7d9aee5ebd31a37404eb12b88805e5
+    changeNotes: Initial release
