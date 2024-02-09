@@ -1,12 +1,4 @@
-﻿___TERMS_OF_SERVICE___
-
-By creating or modifying this file you agree to Google Tag Manager's Community
-Template Gallery Developer Terms of Service available at
-https://developers.google.com/tag-manager/gallery-tos (or such other URL as
-Google may provide), as modified from time to time.
-
-
-___INFO___
+﻿___INFO___
 
 {
   "type": "TAG",
@@ -160,6 +152,15 @@ ___TEMPLATE_PARAMETERS___
               "help": "Set the waiting time in milliseconds before triggering tags that require consent."
             },
             "isUnique": false
+          },
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "region",
+              "displayName": "Region",
+              "simpleValueType": true
+            },
+            "isUnique": false
           }
         ],
         "alwaysInSummary": false,
@@ -214,6 +215,13 @@ if(!consentFlag){
     url_passthrough: data.url_passthrough || false,
     ads_data_redaction: data.ads_data_redaction || false
   });
+  
+  const getRegionArr = (regionStr) => {
+        return regionStr.split(',')
+            .map(region => region.trim())
+            .filter(region => region.length !== 0);
+    };
+  
   data.settingsTable.forEach(setting => {
     
     const waitTime = setting.wait_for_update === '' ? '0' : setting.wait_for_update;
@@ -225,6 +233,12 @@ if(!consentFlag){
       security_storage: setting.security_storage,
       wait_for_update: waitTime
     };
+    
+    const regionArr = getRegionArr(setting.region);
+    if (regionArr.length) {
+          settingObject.region = regionArr;
+        }
+    
     log('default consent from template');
     setDefaultConsentState(settingObject);
   });
