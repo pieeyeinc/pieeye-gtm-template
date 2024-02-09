@@ -1,12 +1,4 @@
-﻿___TERMS_OF_SERVICE___
-
-By creating or modifying this file you agree to Google Tag Manager's Community
-Template Gallery Developer Terms of Service available at
-https://developers.google.com/tag-manager/gallery-tos (or such other URL as
-Google may provide), as modified from time to time.
-
-
-___INFO___
+﻿___INFO___
 
 {
   "type": "TAG",
@@ -160,6 +152,16 @@ ___TEMPLATE_PARAMETERS___
               "help": "Set the waiting time in milliseconds before triggering tags that require consent."
             },
             "isUnique": false
+          },
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "region",
+              "displayName": "Region (leave blank to apply globally)",
+              "simpleValueType": true,
+              "help": "A default consent state of \u0027denied\u0027 will apply until the user has submitted a consent. You can add different default states for users in different geographical regions. Please use ISO-3166-1 alpha-2 country codes for region values. \nExample : ES, US-AK"
+            },
+            "isUnique": false
           }
         ],
         "alwaysInSummary": false,
@@ -214,6 +216,13 @@ if(!consentFlag){
     url_passthrough: data.url_passthrough || false,
     ads_data_redaction: data.ads_data_redaction || false
   });
+  
+  const getRegionArr = (regionStr) => {
+        return regionStr.split(',')
+            .map(region => region.trim())
+            .filter(region => region.length !== 0);
+    };
+  
   data.settingsTable.forEach(setting => {
     
     const waitTime = setting.wait_for_update === '' ? '0' : setting.wait_for_update;
@@ -225,6 +234,12 @@ if(!consentFlag){
       security_storage: setting.security_storage,
       wait_for_update: waitTime
     };
+    
+    const regionArr = getRegionArr(setting.region);
+    if (regionArr.length) {
+          settingObject.region = regionArr;
+        }
+    
     log('default consent from template');
     setDefaultConsentState(settingObject);
   });
