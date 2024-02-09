@@ -157,8 +157,9 @@ ___TEMPLATE_PARAMETERS___
             "param": {
               "type": "TEXT",
               "name": "region",
-              "displayName": "Region",
-              "simpleValueType": true
+              "displayName": "Region (leave blank to apply globally)",
+              "simpleValueType": true,
+              "help": "A default consent state of \u0027denied\u0027 will apply until the user has submitted a consent. You can add different default states for users in different geographical regions. Please use ISO-3166-1 alpha-2 country codes for region values. \nExample : ES, US-AK"
             },
             "isUnique": false
           }
