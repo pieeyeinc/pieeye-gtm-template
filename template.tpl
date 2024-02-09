@@ -122,28 +122,6 @@ ___TEMPLATE_PARAMETERS___
           },
           {
             "param": {
-              "type": "SELECT",
-              "name": "security_storage",
-              "displayName": "Security",
-              "macrosInSelect": false,
-              "selectItems": [
-                {
-                  "value": "granted",
-                  "displayValue": "Granted"
-                },
-                {
-                  "value": "denied",
-                  "displayValue": "Denied"
-                }
-              ],
-              "simpleValueType": true,
-              "defaultValue": "denied",
-              "help": "Select default consent state for security cookies"
-            },
-            "isUnique": false
-          },
-          {
-            "param": {
               "type": "TEXT",
               "name": "wait_for_update",
               "displayName": "Wait for Update",
@@ -231,7 +209,7 @@ if(!consentFlag){
       analytics_storage: setting.analytics_storage,
       personalization_storage: setting.personalization_storage,
       functionality_storage: setting.functionality_storage,
-      security_storage: setting.security_storage,
+      security_storage: 'granted',
       wait_for_update: waitTime
     };
     
