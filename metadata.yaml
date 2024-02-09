@@ -2,8 +2,8 @@ homepage: "https://pii.ai/"
 documentation: "https://pieeye.notion.site/Implementing-Google-Consent-Mode-with-PieEye-70e481c9b8704207a2da08d9b2043ec6"
 versions:
   # latest version
-  - sha: 7eb01676530d7bd7c36d12b71736e891ecf609a5
-    changeNotes: Initial release
+  - sha: 5ed49ec9ac3d03f8bfe06ddda59b121156db8471
+    changeNotes: GTM latest handle single page application and region base consent
   # Initial release
   - sha: 1b5fbeaa0b261c3b2f4dc18c7cb2f1b6811a0f39
     changeNotes: Initial release
