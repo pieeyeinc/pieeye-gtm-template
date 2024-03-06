@@ -2,6 +2,9 @@ homepage: "https://pii.ai/"
 documentation: "https://pieeye.notion.site/Implementing-Google-Consent-Mode-with-PieEye-70e481c9b8704207a2da08d9b2043ec6"
 versions:
   # latest version
+  - sha: 726efc4a66de82414d3bd47d074efccd598294fc
+    changeNotes: Cookies set and granted unlisted category which not in config
+  # latest version
   - sha: caee8354c78e1c04421ee335da4fad6120fd9fe1
     changeNotes: GTM latest handle single page application and region base consent
   # Initial release
