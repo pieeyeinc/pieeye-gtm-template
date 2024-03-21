@@ -14,6 +14,7 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "PieEye Consent Mode",
+  "categories": ["PERSONALIZATION", "ADVERTISING","ANALYTICS"],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
