@@ -212,7 +212,7 @@ if(!consentFlag){
   
   data.settingsTable.forEach(setting => {
     
-    const waitTime = setting.wait_for_update === '' ? '0' : setting.wait_for_update;
+    const waitTime = setting.wait_for_update === '' ? '200' : setting.wait_for_update;
     const settingObject = {
       ad_storage: setting.ad_storage,
       analytics_storage: setting.analytics_storage,
